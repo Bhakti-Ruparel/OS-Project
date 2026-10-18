@@ -173,7 +173,7 @@ function reducer(state, action) {
             showInterrupt:  false,
             stepMessage:    'Step 4 — All data transferred! DMA is sending an interrupt to the CPU …',
           };
-
+  
         case STEPS.CPU_INTERRUPT:
           return {
             ...base,
@@ -315,9 +315,9 @@ export function useSimulation() {
       }
       return;
     }
-    // Animate progress from current value toward 85
+    // Animate progress from current value toward 100
     let current = state.cpuTaskProgress;
-    const target = 82;
+    const target = 100;
     cpuTimer.current = setInterval(() => {
       current = Math.min(current + 1, target);
       dispatch({ type: 'SET_CPU_TASK_PROGRESS', payload: current });
